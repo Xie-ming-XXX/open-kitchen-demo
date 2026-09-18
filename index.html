@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eeece5" />
+  <meta name="description" content="可交互的开放式厨房：探索烹饪、收纳与开放式生活。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23304436'/%3E%3Cpath d='M8 9h16v14H8zM8 15h16M16 15v8' fill='none' stroke='%23f0eade' stroke-width='2'/%3E%3C/svg%3E" />
+  <title>间 · 开放式厨房</title>
+  <script type="module" crossorigin src="./assets/index-PVO-XovU.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DiXpBw80.css">
+</head>
+<body>
+  <main class="workspace">
+    <section id="viewer" aria-label="厨房三维展示">
+      <div class="intro"><p class="eyebrow">A PLACE FOR EVERYDAY</p><h1>让日常，有序发生。</h1><p>一张中岛，连接烹饪与生活。</p></div>
+      <canvas id="scene" aria-label="厨房模型，拖动旋转、滚轮缩放；点击柜门与抽屉开合；聚焦画布后按 Tab 选择部件、Enter 开合。" tabindex="0"></canvas>
+      <button id="immersive" title="隐藏界面；按 Esc 或双击画面退出" aria-label="沉浸观看，按 Esc 或双击画面退出"><span aria-hidden="true">⛶</span> 沉浸观看</button>
+      <div id="loading" role="status">正在打开厨房<span>加载空间与材质…</span></div>
+      <div class="view-bottom"><div class="view-tabs" aria-label="观察视角"><button data-view="overview" class="selected" aria-pressed="true">整体</button><button data-view="prep" aria-pressed="false">操作区</button><button data-view="top" aria-pressed="false">俯视布局</button><button id="tour" aria-pressed="false">▷ 自动巡览</button></div><p id="view-hint">点击柜门开合 · 拖动旋转 · 滚轮缩放</p></div>
+      <div class="scene-caption"><span>把烟火日常，装进理想厨房。</span><span>有序收纳，自在生活。</span></div>
+    </section>
+    <aside class="panel" aria-label="厨房控制">
+      <div class="panel-heading"><p class="eyebrow">OPEN KITCHEN</p><h2>开放式厨房</h2></div>
+      <nav class="experience-tabs" aria-label="探索方式"><button data-panel="browse" aria-pressed="true">空间方案</button><button data-panel="detail" aria-pressed="false">功能细节</button></nav>
+      <section class="control-group" data-section="browse"><h3>动线规划</h3><div id="journey-steps"></div><button class="control" id="dimensions" aria-pressed="false">空间尺度</button><p id="dimension-note" class="help" hidden></p><label class="select-label">材质配色<select id="palette"><option value="teak">柚木 · 奶油白</option><option value="oak">浅木 · 奶油白</option><option value="greige">暖灰 · 奶油白</option></select></label></section>
+      <section class="control-group" data-section="detail" hidden><h3><span>01</span> 设备控制</h3><button class="control" data-action="heat" aria-pressed="false"><span>烤箱加热<small id="oven-status">待机 · 关门后可启动</small></span><b data-value="heat">启动</b></button><button class="control" data-action="hood" aria-pressed="false"><span>嵌入式烟机<small id="hood-status">待机</small></span><b data-value="hood">开启</b></button><button class="control" data-action="lights" aria-pressed="true"><span>台面工作灯<small id="light-status">已点亮</small></span><b class="switch" data-value="lights"></b></button><label class="select-label">光照场景<select id="ambience"><option value="day">日间自然光</option><option value="evening">夜间柔光</option></select></label></section>
+      <section class="control-group structure" data-section="detail" hidden><h3><span>02</span> 构造解析</h3><div class="structure-buttons"><button id="rails" aria-pressed="false">抽屉滑轨</button><button id="vent" aria-pressed="false">烤箱散热</button><button id="hood-detail" aria-pressed="false">烟机安装</button></div><div id="structure-note" hidden></div><label class="select-label" id="travel-control" hidden>抽屉行程 <output id="travel-value">400 mm</output><input id="travel" type="range" min="0" max="400" value="400" step="5"></label><button id="exit-structure" hidden>← 返回完整厨房</button></section>
+      <div class="panel-footer"><p id="feedback" role="status" aria-live="polite"></p><button id="reset">↺ 重置场景</button></div>
+    </aside>
+  </main>
+</body>
+</html>
+
